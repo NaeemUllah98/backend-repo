@@ -37,13 +37,14 @@ app.post("/add-channel", async(req, res)=>{
 })
 
 app.get("/get-channel", async(req, res)=>{
-    try{
-        const result = await ChannelModel.find()
+    const result = await ChannelModel.find()
         if(result){
           return  res.status(200).json({result})
         }
-       } catch(e){
-          return res.status(400).json({message: e})
-       }
+    // try{
+        
+    //    } catch(e){
+    //       return res.status(400).json({message: e})
+    //    }
 })
 app.listen(5000);
