@@ -29,10 +29,10 @@ app.post("/add-channel", async(req, res)=>{
      const newChannels = new ChannelModel(req.body)
      const result = await newChannels.save()
      if(result){
-         res.status(200).json({result, message: "channel data add successfully."})
+        return res.status(200).json({result, message: "channel data add successfully."})
      }
     } catch(e){
-        res.status(400).json({message: e})
+       return res.status(400).json({message: e})
     }
 })
 
@@ -40,10 +40,10 @@ app.get("/get-channel", async(req, res)=>{
     try{
         const result = await ChannelModel.find()
         if(result){
-            res.status(200).json({result})
+          return  res.status(200).json({result})
         }
        } catch(e){
-           res.status(400).json({message: e})
+          return res.status(400).json({message: e})
        }
 })
 app.listen(5000);
