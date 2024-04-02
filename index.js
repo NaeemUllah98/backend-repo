@@ -16,7 +16,8 @@ app.use(bodyParser.json());
 // connectDb();
 mongoose.set('strictQuery', false);
 mongoose.connect("mongodb+srv://naeem66241:oZb0CvnrAS2US687@cluster0.1b8ltkd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {   
-     bufferCommands: false 
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 })
 .then(()=> console.log(`DB connected`))
 .catch((err)=> console.log(err));
